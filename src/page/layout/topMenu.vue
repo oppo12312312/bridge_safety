@@ -1,65 +1,163 @@
 <!--
+import { debug } from 'util';
+import { SSL_OP_ALL } from 'constants';
+import { truncate } from 'fs';
+import { debug } from 'util';
  * @Description: 
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-11 20:18:20
+ * @LastEditTime: 2019-03-12 18:49:45
  -->
 
 <template>
   <el-menu
     default-active="2"
-    class="el-menu-vertical-demo"
-    @open="handleOpen"
-    @close="handleClose"
-    background-color="#545c64"
+    class="el-menu-vertical-demo br-top-menu" 
+    background-color="#33485c"
+    unique-opened
     text-color="#fff"
-    active-text-color="#ffd04b">
-    <el-submenu index="1">
-      <template slot="title">
-        <i class="el-icon-location"></i>
-        <span>导航一</span>
-      </template>
-      <el-menu-item-group>
-        <template slot="title">分组一</template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="1-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="1-4-1">选项1</el-menu-item>
+    active-text-color="#ea644a">
+    <div 
+      v-for="item in menuCfg" 
+      :key="item.index"
+      :index="item.index">
+      <el-submenu 
+        v-if="item.haveChild"
+        :index="item.index">
+
+        <template 
+          slot="title">
+          <i 
+            class="iconfont" 
+            :class="item.icon"></i>
+          <span>{{ item.name }}</span>
+        </template>
+
+        <div 
+          v-for="att in item.child" 
+          :key="att.index">
+
+          <el-submenu 
+            v-if="att.haveChild"
+            :index="att.index" >
+            <template
+              slot="title">
+              <i 
+                class="iconfont" 
+                :class="att.icon"></i>
+              <span>{{ att.name }}</span>
+            </template>
+
+            <el-menu-item 
+              v-for="attr in att.child" 
+              :key="attr.index"
+              :index="attr.index"
+              @click="openPage(att)">   
+              <i 
+                class="iconfont" 
+                :class="attr.icon"></i>
+            <span>{{ attr.name }}</span></el-menu-item>
+          </el-submenu>
+
+
+          <el-menu-item 
+            v-else
+            :index="att.index" 
+            @click="openPage(att)">   
+            <i 
+              class="iconfont" 
+              :class="att.icon"></i>
+          <span>{{ att.name }}</span></el-menu-item>
+        </div>
+
       </el-submenu>
-    </el-submenu>
-    <el-menu-item index="2">
-      <i class="el-icon-menu"></i>
-      <span slot="title">导航二</span>
-    </el-menu-item>
-    <el-menu-item 
-      index="3" 
-      disabled>
-      <i class="el-icon-document"></i>
-      <span slot="title">导航三</span>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <i class="el-icon-setting"></i>
-      <span slot="title">导航四</span>
-    </el-menu-item>
+      <el-menu-item 
+        v-else
+        :index="item.index" 
+        @click="openPage(att)">   
+        <i 
+          class="iconfont" 
+          :class="item.icon"></i>
+      <span>{{ item.name }}</span></el-menu-item>
+    </div>
+
   </el-menu>
 </template>
 
  
 <script>
-export default {
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+const menuCfg = [
+  {
+    name: '综合大屏',
+    icon: 'icon-dapingfuwu',
+    path: 'daping',
+    child: [
+      {
+        name: '项目总览',
+        icon: 'icon-alarm-statistics',
+        path: 'largeCreen'
+      }
+    ]
+  },
+  {
+    name: '数据中心',
+    icon: 'icon-chakandaping',
+    path: 'daping',
+    child: [
+      {
+        name: '图表分析',
+        icon: 'icon-qushi',
+        path: 'daping'
+      }
+    ]
+  },
+  {
+    name: '测试三级菜单',
+    icon: 'icon-chakandaping',
+    path: 'sanji',
+    child: [
+      {
+        name: '测试三级菜单',
+        icon: 'icon-chakandaping',
+        path: 'layout',
+        child: [{
+          name: '测试三级菜单',
+          icon: 'icon-chakandaping',
+          path: 'layout',
+        }]
+      }
+    ]
+  }
+
+];
+const addIndex = function (menuCfg, parentIndex) {
+  debugger;
+  menuCfg.forEach((element, i) => {
+    element.index = parentIndex + '_' + i;
+    element.haveChild = false;
+    if (element.child) {
+      element.haveChild = true;
+      addIndex(element.child, element.index);
     }
+  });
+  console.log(menuCfg);
+};
+addIndex(menuCfg, -1);
+export default {
+  data() {
+    return {
+      menuCfg
+    };
+  },
+  methods: {
+    openPage(value) {
+      debugger;
+      this.$router.push({
+        name: value.path
+      });
+    }
+
   }
 };
 </script>

@@ -1,0 +1,60 @@
+
+ @import '../base.scss';
+
+ #app, body, html {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.br-layout{
+    @extend .db;
+    @extend .v;
+    height: 100%;
+    .br-top-title{
+        height: 50px;
+        .br-logo{
+            width: 200px; 
+            height: 40px; 
+            // background: url(../img/layout/logo.png) no-repeat top;
+            // background-size: cover;
+        }
+        .br-user{
+
+        }
+    }
+    .br-buttom{
+        @extend .fx1;
+        @extend .db;
+        .br-top-menu{
+            width: 200px;
+            .iconfont{
+                margin-right: 10px;
+                margin-left: 4px;
+                width: 24px;
+                text-align: center;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+            i{
+                color: #ffffff
+            }
+            .is-active{
+                .el-menu-item{
+                    i {
+                        color:#ea644a
+                    }
+                }
+            }
+        }
+    
+        .br-content{
+            @extend .fx1;
+            background-color: aqua
+        }
+
+    }
+
+
+}

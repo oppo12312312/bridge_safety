@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:05:59
- * @LastEditTime: 2019-03-12 10:29:59
+ * @LastEditTime: 2019-03-12 18:45:41
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -13,12 +13,12 @@ Vue.use(VueRouter);
 /**
  * 自动化注册所有子路由
  */
-// const childRoutes = [];
-// const requireModules = require.context('@/page', true, /\.router.js$/);
-// requireModules.keys().forEach(fileName => {
-//   const file = requireModules(fileName);
-//   childRoutes.push(file.default || file);
-// });
+const childRoutes = [];
+const requireModules = require.context('@/page', true, /\.router.js$/);
+requireModules.keys().forEach(fileName => {
+  const file = requireModules(fileName);
+  childRoutes.push(file.default || file);
+});
 
 
 export default new VueRouter({
@@ -33,7 +33,7 @@ export default new VueRouter({
       name: 'layout',
       component: layout,
       //   redirect: '/peopleManage',
-    //   children: childRoutes
+      children: childRoutes
     }
   ]
 });
