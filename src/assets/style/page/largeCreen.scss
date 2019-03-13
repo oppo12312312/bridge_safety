@@ -1,0 +1,23 @@
+
+ @import '../base.scss';
+.br-large-creen{
+     @extend .db;
+     @extend .v;
+     height: 100%;
+     background: url(../img/largeCreen/bag.png) no-repeat top;
+     background-size: cover;
+    .top{
+        height: 200px;
+    }
+    .buttom{
+        @extend .db;
+        @extend .fx1;
+        .sides{
+            width: 100px;
+        }
+        .map{
+            @extend .fx1;
+
+        }
+    }
+}

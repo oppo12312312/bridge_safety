@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:05:59
- * @LastEditTime: 2019-03-12 18:45:41
+ * @LastEditTime: 2019-03-12 20:47:03
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';

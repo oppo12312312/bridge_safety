@@ -18,7 +18,7 @@
             width: 200px; 
             height: 40px; 
             // background: url(../img/layout/logo.png) no-repeat top;
-            // background-size: cover;
+            background-size: cover;
         }
         .br-user{
 
@@ -51,7 +51,6 @@
     
         .br-content{
             @extend .fx1;
-            background-color: aqua
         }
 
     }
