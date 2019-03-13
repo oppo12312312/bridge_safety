@@ -14,4 +14,4 @@ npm run build
 cd dist
 
 # 启动
-serve 
+serve -l 5000
