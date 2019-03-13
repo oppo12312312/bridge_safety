@@ -4,6 +4,9 @@ set -e
 # 更新代码
 git pull
 
+#更新包
+npm install
+
 # 构建
 npm run build
 
@@ -11,4 +14,4 @@ npm run build
 cd dist
 
 # 启动
-serve
+serve 
