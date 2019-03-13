@@ -3,22 +3,57 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 20:27:45
- * @LastEditTime: 2019-03-12 20:51:17
+ * @LastEditTime: 2019-03-13 17:16:46
  -->
 <template>
   <CMap 
     :data="chartData"
+    :extend="extend"
     height="100%"></CMap>
 </template>
 
 <script>
 import CMap from 'v-charts/lib/map';
+import {} from 'echarts';
 export default {
   components: {
     CMap
   },
   data() {
     return {
+      extend: {
+        grid: { 
+          top: '502px',
+          right: '23px',
+          bottom: '34px' 
+        },
+        toolbox: {
+          show: true,
+          left: 'left',
+          feature: {
+            dataZoom: {},
+            restore: {},
+            saveAsImage: {}
+          }
+        },
+        series: {
+          label: false,
+          roam: true,
+          itemStyle: {
+            areaColor: '#e2e0e000',
+            borderColor: '#ffffff'
+          },
+          emphasis: {
+            label: {
+              show: false
+            },
+            itemStyle: {
+              areaColor: '#e6a85fc4',
+              borderColor: '#e6a85f',
+            }
+          },
+        }
+      },
       chartData: {
         columns: ['位置', '税收', '人口', '面积'],
         rows: [
