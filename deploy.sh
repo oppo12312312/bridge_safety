@@ -5,7 +5,7 @@ set -e
 git pull
 
 #更新包
-npm install
+cnpm install
 
 # 构建
 npm run build
