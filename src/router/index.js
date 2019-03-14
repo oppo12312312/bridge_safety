@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:05:59
- * @LastEditTime: 2019-03-12 20:47:03
+ * @LastEditTime: 2019-03-14 21:51:37
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -32,7 +32,7 @@ export default new VueRouter({
       path: '/layout',
       name: 'layout',
       component: layout,
-      //   redirect: '/peopleManage',
+      redirect: '/largeCreen',
       children: childRoutes
     }
   ]
