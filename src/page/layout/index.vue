@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:12:22
- * @LastEditTime: 2019-03-13 17:57:06
+ * @LastEditTime: 2019-03-14 15:53:32
  -->
 <template>
   <div class="br-layout">
@@ -16,7 +16,7 @@
     </div>
   </div>
 </template>
-
+  
 <script>
 import topMenu from './topMenu';
 import topTitle from './topTitle';

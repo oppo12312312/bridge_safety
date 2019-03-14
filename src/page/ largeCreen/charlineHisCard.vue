@@ -3,37 +3,42 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 20:27:45
- * @LastEditTime: 2019-03-14 15:46:05
+ * @LastEditTime: 2019-03-14 15:27:49
  -->
 <template>
   <div class="br-card br-card-line">
-    <CLine 
+    <CHistogram 
       :data="chartData"
       :extend="extend"
-      height="100%"></CLine>
+   
+      :settings="chartSettings"
+      height="100%"></CHistogram>
   </div>
 
 </template>
 
 <script>
-import CLine from 'v-charts/lib/line';
+import CHistogram from 'v-charts/lib/histogram';
 import {} from 'echarts';
 import largeCharts from '@/js/echarts/largeCharts';
+
 export default {
   components: {
-    CLine
+    CHistogram
   },
   data() {
     return {
+      chartSettings: {
+        showLine: ['下单用户']
+      },
       extend: {
-        xAxis: Object.assign({ boundaryGap: false }, largeCharts.xAxis),
+        xAxis: largeCharts.xAxis,
         yAxis: largeCharts.yAxis,
         title: {
-          text: '负载s',
+          text: '负载',
           textStyle: {
             color: '#58cdda'
           }
-          
         },
         grid: { 
           top: '40px',
@@ -42,7 +47,7 @@ export default {
         }
       },
       chartData: {
-        columns: ['日期', '访问用户'],
+        columns: ['日期', '访问用户', '下单用户'],
         rows: [
           {
             '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 

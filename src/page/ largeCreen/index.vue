@@ -3,49 +3,54 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 15:11:20
- * @LastEditTime: 2019-03-14 10:02:29
+ * @LastEditTime: 2019-03-14 15:29:02
  -->
 <template>
   <div class="br-large-creen">
-    <!-- <div class="top">
+    <div class="top">
       <card></card>
       <card class="fx1"></card>
       <card class="fx1"></card>
       <card class="fx1"></card>
       <card></card>
-    </div> -->
+    </div>
     <div class="buttom">
-      <!-- <div class="sides">
+      <div class="sides">
         <card ></card>
         <charLineCard></charLineCard>
         <card ></card>
-        <charLineCard></charLineCard>
+        <charlineHisCard></charlineHisCard>
         <card ></card>
-      </div> -->
+      </div>
       <div class="map">  
-        <charMap></charMap>
+        <charChinaMap></charChinaMap>
+        <!-- <charlineHisCard></charlineHisCard> -->
+      
       </div>
       
-      <!-- <div class="sides">
+      <div class="sides">
         <card ></card>
         <charLineCard></charLineCard>
         <card ></card>
         <charLineCard></charLineCard>
         <card ></card>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import charMap from './chaChinaMap';
+import charChinaMap from './charChinaMap';
 import card from './card';
 import charLineCard from './charLineCard';
+import charlineHisCard from './charlineHisCard';
 export default {
   components: {
-    charMap,
+   
     card,
-    charLineCard
+    charChinaMap,
+    charLineCard,
+    charlineHisCard
   }
 
 };
