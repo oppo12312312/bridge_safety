@@ -3,10 +3,10 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 20:27:45
- * @LastEditTime: 2019-03-14 15:46:05
+ * @LastEditTime: 2019-03-14 17:56:09
  -->
 <template>
-  <div class="br-card br-card-line">
+  <div class="br-card br-card-char">
     <CLine 
       :data="chartData"
       :extend="extend"
@@ -28,17 +28,14 @@ export default {
       extend: {
         xAxis: Object.assign({ boundaryGap: false }, largeCharts.xAxis),
         yAxis: largeCharts.yAxis,
+        legend: largeCharts.legend,
+        grid: largeCharts.grid,
         title: {
           text: '负载s',
           textStyle: {
             color: '#58cdda'
           }
           
-        },
-        grid: { 
-          top: '40px',
-          right: '30px',
-          bottom: '20px' 
         }
       },
       chartData: {

@@ -8,11 +8,13 @@
      height: 100%;
      background: url(../img/largeCreen/bag.png) no-repeat top;
      background-size: cover;
+     overflow: auto;
     .top{
         @extend .db;
         height: 120px;
-        margin-top:20px;
+        margin-top:15px;
         .br-card{
+           
             &:last-child{
                 width: 300px;
             }
@@ -27,6 +29,8 @@
         @extend .fx1;
         margin: 10px 0px;
         .sides{
+            @extend .db;
+            @extend .v;
             width: 320px;
         }
         .map{
@@ -34,6 +38,7 @@
             @extend .fx1;
         }
         .br-card{
+            min-height: 120px;
             margin-bottom: 10px;
         }
     }
@@ -73,7 +78,8 @@
         }
     }
 
-    .br-card-line{
-        height: 174px;
+    .br-card-char{
+        height: 158px;
+        padding: 8px 0px;
     }
 }

@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 15:11:20
- * @LastEditTime: 2019-03-14 15:29:02
+ * @LastEditTime: 2019-03-14 21:42:20
  -->
 <template>
   <div class="br-large-creen">
@@ -16,24 +16,22 @@
     </div>
     <div class="buttom">
       <div class="sides">
-        <card ></card>
+        <card class="fx1"></card>
         <charLineCard></charLineCard>
-        <card ></card>
+        <card class="fx1"></card>
         <charlineHisCard></charlineHisCard>
-        <card ></card>
+        <card class="fx1"></card>
       </div>
       <div class="map">  
         <charChinaMap></charChinaMap>
-        <!-- <charlineHisCard></charlineHisCard> -->
-      
       </div>
       
       <div class="sides">
-        <card ></card>
+        <card class="fx1"></card>
         <charLineCard></charLineCard>
-        <card ></card>
+        <card class="fx1"></card>
         <charLineCard></charLineCard>
-        <card ></card>
+        <card class="fx1"></card>
       </div>
     </div>
   </div>

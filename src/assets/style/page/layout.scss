@@ -1,5 +1,6 @@
 
  @import '../base.scss';
+ @import '../themeColor.scss';
 
  #app, body, html {
     margin: 0px;
@@ -14,15 +15,76 @@
     height: 100%;
     .br-top-title{
         height: 50px;
+        background-color: rgb(51, 72, 92);
         .br-logo{
-            width: 200px; 
-            height: 40px; 
-            // background: url(../img/layout/logo.png) no-repeat top;
-            background-size: cover;
+            float: left;
+            margin: 10px;
+            margin-left: 25px;
+            width: 40px;
+            height: 32px;
+            background: url(../img/layout/logo-3.png) no-repeat top;
+            background-size: contain;
         }
-        // .br-user{
+        .br-text{
+            float: left;
+            color: #ffffff;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 14px;
 
-        // }
+        }
+        .br-info{
+            @extend .db;
+            float: right;
+            
+            a{
+                text-align: center;
+                padding: 13px;
+                width: 25px;
+                color: #ffffff;
+                cursor: pointer;
+                
+                &:hover{
+                    background-color: $c-hover-bg
+                }
+                &:hover i{
+                    color: $c-hover-blue
+                }
+                i{
+                   
+                    font-size: 20px;
+                }
+                span{
+                    position: absolute;
+                    display: inline-block;
+                    top: 7px;
+                    background-color: #ea644a;
+                    padding: 3px 7px;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-radius: 9px;
+                }
+            }
+            .user-v{
+                height: 50px;
+                margin-right: 10px;
+                &:hover{
+                   
+                    background-color: $c-hover-bg
+                }
+                .user{
+                    margin: 7px 12px;
+                    width: 35px;
+                    height: 35px;
+                    background: url(../img/layout/admin.jpg) no-repeat top;
+                    background-size: contain;
+                    border-radius: 50%;
+                }
+            }
+
+
+
+        }
     }
     .br-buttom{
         @extend .fx1;
@@ -31,15 +93,38 @@
             border-right: solid 0px #e6e6e6;
         }
         .br-top-menu{
-            width: 200px;
-            .iconfont{
-                margin-right: 10px;
-                margin-left: 4px;
-                width: 24px;
+            // width: 200px;
+            background-color: #33485c;
+            .br-switch{
                 text-align: center;
-                font-size: 16px;
-                vertical-align: middle;
+                padding: 5px;
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
+                cursor: pointer;
+                &:hover{
+                    background-color: $c-hover-bg
+                }
+                &:hover .iconfont{
+                    color: $c-hover-blue
+                }
+                .iconfont{
+                    font-size: 20px;
+                    margin-right: 0px;
+                    margin-left: 0px;
+                    
+                }
+
             }
+        
+                .iconfont{
+                    margin-right: 10px;
+                    margin-left: 4px;
+                    width: 24px;
+                    text-align: center;
+                    font-size: 16px;
+                    vertical-align: middle;
+                }
+
             i{
                 color: #ffffff
             }
@@ -57,6 +142,24 @@
         }
 
     }
-
-
 }
+
+
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+
+  .el-menu--collapse{
+      .el-submenu__title{
+          span, .el-submenu__icon-arrow{
+            display: none;
+          }
+      }
+  }
+  .el-menu--vertical{
+    span{
+        margin-left: 10px;
+    }
+  }

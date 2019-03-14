@@ -3,9 +3,21 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-14 14:51:03
- * @LastEditTime: 2019-03-14 15:24:58
+ * @LastEditTime: 2019-03-14 18:02:23
  */
 export default {
+  legend: {
+    align: 'left',
+    right: '15px',
+    textStyle: {
+      color: '#fff'
+    }
+  },
+  grid: { 
+    top: '40px',
+    right: '30px',
+    bottom: '0px' 
+  },
   xAxis: {
     // boundaryGap: false,
     splitLine: {
