@@ -3,12 +3,13 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 20:27:45
- * @LastEditTime: 2019-03-13 17:16:46
+ * @LastEditTime: 2019-03-14 09:58:19
  -->
 <template>
   <CMap 
     :data="chartData"
     :extend="extend"
+    :settings="settings"
     height="100%"></CMap>
 </template>
 
@@ -22,16 +23,29 @@ export default {
   data() {
     return {
       extend: {
-        grid: { 
-          top: '502px',
-          right: '23px',
-          bottom: '34px' 
+        color: ['#c12f34', '#38b03f'],
+        legend: {
+          right: 0,
+          textStyle: {
+            color: '#ffffff'
+          },
+          borderRadius: 5,
+          data: [{
+            name: '税收',
+            // 强制设置图形为圆。
+            icon: 'circle',
+            color: '#ffffff'
+          }, {
+            name: '人口',
+            // 强制设置图形为圆。
+            icon: 'circle',
+          }],
         },
+        
         toolbox: {
           show: true,
           left: 'left',
           feature: {
-            dataZoom: {},
             restore: {},
             saveAsImage: {}
           }
@@ -45,17 +59,34 @@ export default {
           },
           emphasis: {
             label: {
-              show: false
+              show: true,
+              color: '#e6a85f',
             },
             itemStyle: {
-              areaColor: '#e6a85fc4',
+              areaColor: 'rgba(230, 168, 95, 0.6)',
               borderColor: '#e6a85f',
+              borderWidth: 1
             }
           },
+          showEffectOn: 'render',
+          // symbolSize() {
+          //   debugger;
+          //   return 1000;
+          // },
+          markPoint: {
+            symbol: 'roundRect',
+            symbolSize() {
+              debugger;
+              return 1000;
+            },
+            itemStyle: {
+              color: '#e6a85f',
+            }
+          }
         }
       },
       chartData: {
-        columns: ['位置', '税收', '人口', '面积'],
+        columns: ['位置', '税收', '人口'],
         rows: [
           {
             '位置': '吉林', '税收': 123, '人口': 123, '面积': 92134 
@@ -72,7 +103,8 @@ export default {
         ]
       }
     };
-  }
+  },
+
 };
 </script>
 

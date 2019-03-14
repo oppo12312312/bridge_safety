@@ -10,6 +10,7 @@
   "dependencies": {
     "echarts": "^4.1.0",
     "element-ui": "^2.6.1",
+    "gulp": "^4.0.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "v-charts": "^1.19.0",

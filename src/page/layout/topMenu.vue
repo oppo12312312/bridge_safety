@@ -7,13 +7,13 @@ import { debug } from 'util';
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-12 18:49:45
+ * @LastEditTime: 2019-03-13 21:37:27
  -->
 
 <template>
   <el-menu
     default-active="2"
-    class="el-menu-vertical-demo br-top-menu" 
+    class="el-menu-vertical-demo" 
     background-color="#33485c"
     unique-opened
     text-color="#fff"
@@ -89,7 +89,8 @@ import { debug } from 'util';
 <script>
 const menuCfg = [
   {
-    name: '综合大屏',
+    // name: '综合大屏',
+    name: '测试菜单',
     icon: 'icon-dapingfuwu',
     path: 'daping',
     child: [
@@ -101,7 +102,8 @@ const menuCfg = [
     ]
   },
   {
-    name: '数据中心',
+    // name: '数据中心',
+    name: '测试菜单',
     icon: 'icon-chakandaping',
     path: 'daping',
     child: [
@@ -132,7 +134,6 @@ const menuCfg = [
 
 ];
 const addIndex = function (menuCfg, parentIndex) {
-  debugger;
   menuCfg.forEach((element, i) => {
     element.index = parentIndex + '_' + i;
     element.haveChild = false;
@@ -152,7 +153,6 @@ export default {
   },
   methods: {
     openPage(value) {
-      debugger;
       this.$router.push({
         name: value.path
       });

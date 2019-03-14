@@ -27,6 +27,9 @@
     .br-buttom{
         @extend .fx1;
         @extend .db;
+        .el-menu {
+            border-right: solid 0px #e6e6e6;
+        }
         .br-top-menu{
             width: 200px;
             .iconfont{
