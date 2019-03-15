@@ -6,7 +6,7 @@ rm -rf nohup.out
 
 # 更新代码
 git pull
-git add -a
+git add .
 git commit -m 'deploy'
 git push
 
