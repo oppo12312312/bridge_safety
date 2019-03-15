@@ -6,6 +6,9 @@ rm -rf nohup.out
 
 # 更新代码
 git pull
+git add -a
+git commit -m 'deploy'
+git push
 
 #更新包
 cnpm install
@@ -17,4 +20,4 @@ npm run build
 cd dist
 
 # 启动
-serve -l 5000
+serve -l 5000 &
