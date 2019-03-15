@@ -3,11 +3,12 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:05:59
- * @LastEditTime: 2019-03-14 21:51:37
+ * @LastEditTime: 2019-03-15 14:14:18
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import layout from '@/page/layout';
+import test from '@/page/test';
 
 Vue.use(VueRouter);
 /**
@@ -26,6 +27,7 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
+      // redirect: '/layout'
       redirect: '/layout'
     },
     {
@@ -34,6 +36,11 @@ export default new VueRouter({
       component: layout,
       redirect: '/largeCreen',
       children: childRoutes
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test,
     }
   ]
 });

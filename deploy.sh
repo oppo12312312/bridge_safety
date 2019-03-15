@@ -3,9 +3,6 @@
 # cnpm install serve
 # cnpm install -g xl_close_port
 
-# 删除日志
-rm -rf nohup.out 
-
 # 更新代码
 git pull
 git add .
