@@ -18,11 +18,5 @@ cnpm install
 # 构建
 npm run build
 
-# cd 到构建输出的目录下 
-cd dist
-
-#关闭之前的
-xl_close_port -p 5000
-
 # 启动
-serve -l 5000 &
+node app.js &
