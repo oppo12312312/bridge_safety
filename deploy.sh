@@ -1,5 +1,5 @@
 # 当发生错误时中止脚本
-set -e
+# set -e
 
 # 删除日志
 rm -rf nohup.out 
