@@ -5,9 +5,6 @@
 
 # 更新代码
 git pull
-git add .
-git commit -m 'deploy'
-git push
 
 #更新包
 cnpm install
