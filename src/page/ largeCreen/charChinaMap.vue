@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 20:27:45
- * @LastEditTime: 2019-03-14 14:18:29
+ * @LastEditTime: 2019-03-16 21:00:16
  -->
 <template>
   <div 
@@ -53,7 +53,7 @@ const option = {
       }
     },
     itemStyle: {
-      areaColor: '#e2e0e000',
+      areaColor: 'rgba(250, 235, 215, 0)',
       borderColor: '#d4d4d4'
     },
     emphasis: {
