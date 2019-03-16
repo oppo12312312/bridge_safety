@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:05:59
- * @LastEditTime: 2019-03-15 14:14:18
+ * @LastEditTime: 2019-03-16 17:14:26
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -23,7 +23,7 @@ requireModules.keys().forEach(fileName => {
 
 
 export default new VueRouter({
-//   mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
