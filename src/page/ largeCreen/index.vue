@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 15:11:20
- * @LastEditTime: 2019-03-14 21:42:20
+ * @LastEditTime: 2019-03-16 19:58:44
  -->
 <template>
   <div class="br-large-creen">
@@ -23,7 +23,7 @@
         <card class="fx1"></card>
       </div>
       <div class="map">  
-        <charChinaMap></charChinaMap>
+        <!-- <charChinaMap></charChinaMap> -->
       </div>
       
       <div class="sides">
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import charChinaMap from './charChinaMap';
+// import charChinaMap from './charChinaMap';
 import card from './card';
 import charLineCard from './charLineCard';
 import charlineHisCard from './charlineHisCard';
@@ -46,7 +46,7 @@ export default {
   components: {
    
     card,
-    charChinaMap,
+    // charChinaMap,
     charLineCard,
     charlineHisCard
   }
