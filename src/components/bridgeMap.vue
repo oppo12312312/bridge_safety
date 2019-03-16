@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-01 14:59:51
- * @LastEditTime: 2019-03-15 15:04:49
+ * @LastEditTime: 2019-03-16 10:43:40
  -->
 <template>
   <div class="map">
@@ -71,7 +71,7 @@ export default {
       icon: {
         iconAnchor: new L.Point(30, 30),
         iconSize: new L.Point(50, 32),
-        iconUrl: '/static/map/location.png'
+        iconUrl: '/map/location.png'
       },
       /**
          * 红色图标
@@ -79,7 +79,7 @@ export default {
       iconRed: {
         iconAnchor: new L.Point(30 * 1.2, 30 * 1.2),
         iconSize: new L.Point(50 * 1.2, 32 * 1.2),
-        iconUrl: '/static/map/location_gif.gif'
+        iconUrl: '/map/location_gif.gif'
       },
       tooltip: {
         permanent: true,
