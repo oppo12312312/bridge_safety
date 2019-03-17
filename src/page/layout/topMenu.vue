@@ -9,7 +9,7 @@ import { debug } from 'util';
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-14 19:58:39
+ * @LastEditTime: 2019-03-17 11:04:49
  -->
 
 <template>
@@ -121,7 +121,7 @@ const menuCfg = [
       {
         name: '图表分析',
         icon: 'icon-qushi',
-        path: 'daping'
+        path: 'test'
       }
     ]
   },
