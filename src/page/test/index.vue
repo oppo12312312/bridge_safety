@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:58:28
- * @LastEditTime: 2019-03-15 14:55:29
+ * @LastEditTime: 2019-03-17 11:30:35
  -->
 <template>
   <div class="w100 height100">      
@@ -24,13 +24,13 @@ export default {
     return {
       markers: [{
         id: 1,
-        lng: 700,
+        lng: 200,
         lat: 300,
         name: '999'
       }, {
         id: 2,
-        lng: 700,
-        lat: 500,
+        lng: 400,
+        lat: 610.5,
         name: '999'
       }]
     };

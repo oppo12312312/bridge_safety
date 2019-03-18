@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-01 14:59:51
- * @LastEditTime: 2019-03-16 10:43:40
+ * @LastEditTime: 2019-03-17 11:31:05
  -->
 <template>
   <div class="map">
@@ -92,7 +92,7 @@ export default {
          * 最小最大缩放级别
          */
       minZoom: -3,
-      maxZoom: 3,
+      maxZoom: 8,
       crs: L.CRS.Simple,
       /**
          * tip偏移量

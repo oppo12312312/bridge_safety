@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 20:27:45
- * @LastEditTime: 2019-03-16 21:00:16
+ * @LastEditTime: 2019-03-18 13:42:25
  -->
 <template>
   <div 
-    class="height100"
+    style="width: 100%; height: 100%"
     ref="cardChinaChar"></div>
 </template>
 
@@ -121,10 +121,11 @@ const option = {
     }
   ]
 };
-import echarts from 'echarts';
+import echarts from '@/js/mixin/echarts';
 import 'echarts/map/js/china.js';
 
 export default {
+  mixins: [echarts],
   mounted() {
     this.getData();
     this.draw();
@@ -186,8 +187,7 @@ export default {
       option.series[1].data = normal;
     },
     draw() {
-      const myChart = echarts.init(this.$refs.cardChinaChar);
-      myChart.setOption(option); 
+      this.init(option, this.$refs.cardChinaChar);
     }
   }
 
