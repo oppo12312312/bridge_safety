@@ -5,3 +5,27 @@ $--color-primary: teal;
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
+@import "./themeColor.scss";
+
+.el-dropdown-menu{
+    background-color: $bg;
+    border: 1px solid $bg;
+   
+    .el-dropdown-menu__item--divided{
+        border-top: 1px solid rgb(85, 85, 85);
+    }
+    .el-dropdown-menu__item--divided:before {
+        background-color: $bg;
+    }
+    li{
+        color: $c-white;
+        &:hover{
+            color: $c-white  !important;
+            background-color: $c-hover-blue  !important;
+        }
+    }
+    .popper__arrow:after{
+        border-bottom-color: $bg!important;
+    }
+
+}

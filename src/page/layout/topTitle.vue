@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 13:42:07
- * @LastEditTime: 2019-03-14 21:38:10
+ * @LastEditTime: 2019-03-19 21:59:32
  -->
 <template>
   <div class="br-top-title">
@@ -16,7 +16,7 @@
       <a><i class="iconfont icon-gonggao" ></i><span>2</span></a> 
       <a @click="fullScreen"><i class="iconfont icon-quanping" ></i></a> 
 
-      <el-dropdown>
+      <el-dropdown trigger="click">
         <div class="el-dropdown-link user-v">
           <i class="el-icon--right user"></i>
         </div>

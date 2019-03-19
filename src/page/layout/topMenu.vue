@@ -9,7 +9,7 @@ import { debug } from 'util';
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-17 11:04:49
+ * @LastEditTime: 2019-03-19 21:23:56
  -->
 
 <template>
@@ -49,7 +49,8 @@ import { debug } from 'util';
 
             <el-submenu 
               v-if="att.haveChild"
-              :index="att.index" >
+              :index="att.index" 
+              class="chird" >
               <template
                 slot="title">
                 <i 
@@ -72,6 +73,7 @@ import { debug } from 'util';
 
             <el-menu-item 
               v-else
+              class="chird"
               :index="att.index" 
               @click="openPage(att)">   
               <i 
