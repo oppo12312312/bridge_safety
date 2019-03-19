@@ -3,23 +3,17 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:58:28
- * @LastEditTime: 2019-03-17 11:30:35
+ * @LastEditTime: 2019-03-19 20:27:51
  -->
 <template>
   <div class="w100 height100">      
-    <bridgeMap 
-      ref="map" 
-      :markers="markers"></bridgeMap></div>
+    222</div>
   
 </template>
 
 <script>
-import bridgeMap from '@/components/bridgeMap';
 
 export default {
-  components: {
-    bridgeMap
-  },
   data() {
     return {
       markers: [{
