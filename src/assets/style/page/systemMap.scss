@@ -1,0 +1,21 @@
+@import '@/assets/style/base.scss';
+.system-map{
+    @extend .db;
+    @extend .height100;
+    .search{
+        @extend .height100;
+        width: 200px;
+
+    }
+    .content{
+        @extend .height100;
+        @extend .fx1;
+        @extend .db;
+        @extend .v;
+        .map{
+            @extend .height100;
+        }
+
+    }
+
+}

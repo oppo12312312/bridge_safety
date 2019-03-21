@@ -98,95 +98,14 @@
         .el-menu {
             border-right: solid 0px #e6e6e6;
         }
-        .br-top-menu{
-            .is-active{
-                i,span{
-                    color:$c-hover-red !important;
-                }
-            }
-            // width: 200px;
-            background-color: #33485c;
-            .el-submenu__title{
-                height: 50px;
-                padding: 0 10px;
-                line-height: 50px;
-                &:hover{
-                    background-color:$c-hover-red !important;
-                    i,span{
-                        color:$c-white !important;
-                    }
-                }
-                .el-submenu__icon-arrow{
-                    display: none;
-                }
 
-            }
-            .chird{
-                .el-submenu__icon-arrow{
-                    display: block !important;
-                }
-            }
-            .el-menu-item{
-                background-color: rgba(30,30,30,.3) !important;
-                &:hover{
-                    background-color: rgba(30,30,30,.3) !important;
-                }
-                &:hover{
-                    span, i{
-                        color:$c-hover-red !important;
-                    }
-                    span{
-                        font-weight: 500!important;
-                    }
-                }
-            }
-            .br-switch{
-                text-align: center;
-                padding: 5px;
-                border-top: 1px solid #555;
-                border-bottom: 1px solid #555;
-                cursor: pointer;
-                &:hover{
-                    background-color: $c-hover-bg
-                }
-                &:hover .iconfont{
-                    color: $c-hover-blue
-                }
-                .iconfont{
-                    font-size: 20px;
-                    margin-right: 0px;
-                    margin-left: 0px;
-                    
-                }
-
-            }
-        
-                .iconfont{
-                    margin-right: 10px;
-                    margin-left: 4px;
-                    width: 24px;
-                    text-align: center;
-                    font-size: 16px;
-                    vertical-align: middle;
-                }
-
-            i{
-                color: #ffffff
-            }
-            .is-active{
-                .el-menu-item{
-                    i {
-                        color:#ea644a
-                    }
-                }
-            }
-        }
     
         .br-content{
             @extend .fx1;
         }
 
     }
+
 }
 
 

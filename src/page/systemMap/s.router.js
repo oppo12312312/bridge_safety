@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 18:46:32
- * @LastEditTime: 2019-03-20 22:02:52
+ * @LastEditTime: 2019-03-20 22:10:40
  */
 
 const index = resolve => require(['./index'], resolve);
@@ -11,14 +11,9 @@ const index = resolve => require(['./index'], resolve);
 
 
 export default [{
-  path: '/largeCreen/index',
-  name: 'largeCreen',
+  path: '/systemMap/index',
+  name: 'systemMap',
   component: index,
-  // redirect: '/system/taskManage',
-  // children: [{
-  //   path: '/system/taskManage',
-  //   name: 'taskManage',
-  //   component: taskManage,
-  // }]
+
   
 }];

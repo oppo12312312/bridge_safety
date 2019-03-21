@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 17:05:59
- * @LastEditTime: 2019-03-16 17:14:26
+ * @LastEditTime: 2019-03-20 22:12:20
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -14,11 +14,12 @@ Vue.use(VueRouter);
 /**
  * 自动化注册所有子路由
  */
-const childRoutes = [];
+let childRoutes = [];
 const requireModules = require.context('@/page', true, /\.router.js$/);
+debugger;
 requireModules.keys().forEach(fileName => {
   const file = requireModules(fileName);
-  childRoutes.push(file.default || file);
+  childRoutes = childRoutes.concat(file.default);
 });
 
 
@@ -34,7 +35,7 @@ export default new VueRouter({
       path: '/layout',
       name: 'layout',
       component: layout,
-      redirect: '/largeCreen',
+      redirect: '/largeCreen/index',
       children: childRoutes
     },
     {
