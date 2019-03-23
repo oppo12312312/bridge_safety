@@ -1,21 +1,11 @@
 <!--
-import { debug } from 'util';
-import { debug } from 'util';
-import { debug } from 'util';
-import { debug } from 'util';
-import { debug } from 'util';
-import { debug } from 'util';
-import { truncate } from 'fs';
-import { debug } from 'util';
-import { SSL_OP_ALL } from 'constants';
-import { truncate } from 'fs';
-import { debug } from 'util';
  * @Description: 
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-20 21:59:02
+ * @LastEditTime: 2019-03-23 10:53:01
  -->
+
 
 <template>
   <div class="height100">
@@ -29,7 +19,7 @@ import { debug } from 'util';
       :default-active="active"
       class="el-menu-vertical-demo" 
       background-color="#33485c"
-      unique-opened
+      unique-opened  
       text-color="#fff"
       active-text-color="#ea644a">
       <div 
