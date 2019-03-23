@@ -3,17 +3,27 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-15 11:36:47
- * @LastEditTime: 2019-03-16 17:17:50
+ * @LastEditTime: 2019-03-23 11:47:31
  */
-const express = require('express'); //express框架
-const http = require('http'); 
-const history = require('connect-history-api-fallback');
-
+const express = require('express');
 const app = express();
-app.use(history());
 app.use(express.static('./dist'));
+ 
+app.get('/get', (req, res) => {
+  console.log(req.query);
+  res.status(200).send({
+    loginName: 'admin'
+  });
+});
+app.post('/post', (req, res) => {
+  console.log(req.body);
+  res.status(200).send({
+    loginName: 'post'
+  });
+});
 
-const httpServer = http.createServer(app);
-httpServer.listen(5000, '0.0.0.0', () => {
-  console.log('success');
+ 
+const server = app.listen(5000, () => {
+  const port = server.address().port;
+  console.log(`启动成功,端口：${port}`);
 });

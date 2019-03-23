@@ -9,7 +9,7 @@ import { debug } from 'util';
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-17 11:04:49
+ * @LastEditTime: 2019-03-23 11:12:28
  -->
 
 <template>
@@ -114,12 +114,12 @@ const menuCfg = [
   },
   {
     // name: '数据中心',
-    name: '测试菜单',
+    name: '测试接口',
     icon: 'icon-chakandaping',
     path: 'daping',
     child: [
       {
-        name: '图表分析',
+        name: '测试接口',
         icon: 'icon-qushi',
         path: 'test'
       }
