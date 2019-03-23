@@ -1,9 +1,10 @@
 <!--
+import { debug } from 'util';
  * @Description: 
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-23 10:53:01
+ * @LastEditTime: 2019-03-23 20:59:44
  -->
 
 
@@ -16,7 +17,7 @@
     </div>
     <el-menu
       :collapse="isCollapse"
-      :default-active="active"
+      :default-active="activeIndex"
       class="el-menu-vertical-demo" 
       background-color="#33485c"
       unique-opened  
@@ -99,12 +100,12 @@
 const menuCfg = [
   {
     // name: '综合大屏',
-    name: '测试菜单',
+    name: '大屏控制',
     icon: 'icon-dapingfuwu',
     path: 'daping',
     child: [
       {
-        name: '项目总览',
+        name: '综合大屏',
         icon: 'icon-alarm-statistics',
         path: '/largeCreen/index'
       }
@@ -112,16 +113,15 @@ const menuCfg = [
   },
   {
     // name: '数据中心',
-    name: '测试菜单',
+    name: '主图系统',
     icon: 'icon-chakandaping',
-    path: 'daping',
-    child: [
-      {
-        name: '图表分析',
-        icon: 'icon-qushi',
-        path: '/systemMap/index'
-      }
-    ]
+    path: '/systemMap/index'
+  },
+  {
+    // name: '数据中心',
+    name: '实时监测',
+    icon: 'icon-chakandaping',
+    path: '/monitor/index'
   },
   {
     name: '测试三级菜单',
@@ -148,9 +148,25 @@ export default {
     return {
       menuCfg: [],
       isCollapse: false,
-      active: '',
+      activeIndex: '',
      
     };
+  },
+  watch: {
+    activeIndex(value) {
+      debugger;
+      const index = value.split('_');
+      const re = [];
+      let menu = this.menuCfg;
+      for (let i = 1; i < index.length; i++) {
+        const item = menu[index[i]];
+        re.push(item.name);
+        if (item.child) {
+          menu = item.child;
+        }
+      }
+      this.$emit('active', re);
+    }
   },
   mounted() {
     this.menuCfg = this.addIndex(menuCfg, -1);
@@ -159,6 +175,7 @@ export default {
   methods: {
     openPage(value) {
       debugger;
+      this.activeIndex = value.index;
       this.$router.push({
         path: value.path
       });
@@ -169,7 +186,7 @@ export default {
     getActiveByPathName(menuCfg, pathname) {
       menuCfg.forEach((element) => {
         if (element.path === pathname) {
-          this.active = element.index;
+          this.activeIndex = element.index;
           return;
         }
         if (element.child) {

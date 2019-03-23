@@ -1,11 +1,24 @@
 /* 改变主题色变量 */
-$--color-primary: teal;
+$--color-primary:rgb(3, 184, 207);
 
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import "~element-ui/packages/theme-chalk/src/index";
 @import "./themeColor.scss";
+
+/* 滚动条初始化 */
+.el-scrollbar {
+    vertical-align: inherit;
+    overflow: hidden;
+  
+    .el-scrollbar__wrap {
+      margin-bottom: 0px !important;
+      overflow-x: hidden !important;
+    }
+  }
+
+  
 
 .el-dropdown-menu{
     background-color: $bg;

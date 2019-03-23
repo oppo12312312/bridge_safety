@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:31:30
- * @LastEditTime: 2019-03-20 22:19:56
+ * @LastEditTime: 2019-03-23 16:46:36
  */
 import Vue from 'vue';
 import router from '@/router'; // 路由
@@ -18,6 +18,7 @@ import '@/assets/style/element-variables.scss'; //element 主题样式库
 
 
 Vue.use(ElementUI, { //element组件库
+  size: 'small' 
 });
 
 router.beforeEach((to, from, next) => {

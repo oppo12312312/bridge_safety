@@ -3,38 +3,40 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-12 15:11:20
- * @LastEditTime: 2019-03-16 20:33:35
+ * @LastEditTime: 2019-03-23 14:49:41
  -->
 <template>
-  <div class="br-large-creen">
-    <div class="top">
-      <card></card>
-      <card class="fx1"></card>
-      <card class="fx1"></card>
-      <card class="fx1"></card>
-      <card></card>
-    </div>
-    <div class="buttom">
-      <div class="sides">
+  <el-scrollbar class="height100">
+    <div class="br-large-creen">
+      <div class="top">
+        <card></card>
         <card class="fx1"></card>
-        <charLineCard></charLineCard>
         <card class="fx1"></card>
-        <charlineHisCard></charlineHisCard>
         <card class="fx1"></card>
+        <card></card>
       </div>
-      <div class="map">  
-        <charChinaMap></charChinaMap>
-      </div>
+      <div class="buttom">
+        <div class="sides">
+          <card class="fx1"></card>
+          <charLineCard></charLineCard>
+          <card class="fx1"></card>
+          <charlineHisCard></charlineHisCard>
+          <card class="fx1"></card>
+        </div>
+        <div class="map">  
+          <charChinaMap></charChinaMap>
+        </div>
       
-      <div class="sides">
-        <card class="fx1"></card>
-        <charLineCard></charLineCard>
-        <card class="fx1"></card>
-        <charLineCard></charLineCard>
-        <card class="fx1"></card>
+        <div class="sides">
+          <card class="fx1"></card>
+          <charLineCard></charLineCard>
+          <card class="fx1"></card>
+          <charLineCard></charLineCard>
+          <card class="fx1"></card>
+        </div>
       </div>
     </div>
-  </div>
+  </el-scrollbar>
 </template>
 
 <script>

@@ -1,20 +1,28 @@
 @import '@/assets/style/base.scss';
-.system-map{
+.monitor{
     @extend .db;
     @extend .height100;
-
     .content{
-        @extend .height100;
+        overflow: hidden ;
         @extend .fx1;
         @extend .db;
         @extend .v;
-        .map{
+        .char{
             @extend .fx1;
+            height: 300px;
         }
         .table{
-            padding: 10px 0px;;
+            @extend .fx1;
+        }
+        .br-tab{
+            margin-top: 2px;
         }
 
+    }
+
+
+    .el-tabs__nav{
+        float: right;
     }
 
 }
