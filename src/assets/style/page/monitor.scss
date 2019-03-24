@@ -9,10 +9,12 @@
         @extend .v;
         .char{
             @extend .fx1;
-            height: 300px;
+ 
         }
         .table{
-            @extend .fx1;
+            height: 200px;
+            position:relative;
+
         }
         .br-tab{
             margin-top: 2px;

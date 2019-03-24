@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:58:28
- * @LastEditTime: 2019-03-23 23:33:14
+ * @LastEditTime: 2019-03-24 10:37:02
  -->
 <template>
   <div class="monitor"> 
@@ -43,26 +43,29 @@
       </div>
     
       <div class="table">
-        <el-table
-          :data="tableData"
-          height="250px"
-          style="width: 100% "
-          border>
-          <el-table-column
-            prop="date"
-            label="日期"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="name"
-            label="姓名"
-          >
-          </el-table-column>
-          <el-table-column
-            prop="address"
-            label="地址">
-          </el-table-column>
-        </el-table>   
+        <div class="table-c">
+          <el-table
+            :data="tableData"
+            height="200px" 
+            width = "100%" 
+            border>
+            <el-table-column
+              prop="date"
+              label="日期"
+            >
+            </el-table-column>
+            <el-table-column
+              prop="name"
+              label="姓名"
+            >
+            </el-table-column>
+            <el-table-column
+              prop="address"
+              label="地址">
+            </el-table-column>
+          </el-table>   
+        </div>
+ 
 
       </div> 
 

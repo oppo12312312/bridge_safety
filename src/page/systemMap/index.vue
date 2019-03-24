@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:58:28
- * @LastEditTime: 2019-03-23 17:54:06
+ * @LastEditTime: 2019-03-24 10:44:39
  -->
 <template>
   <div class="system-map"> 
@@ -18,26 +18,29 @@
           :markers="markers"></bridgeMap>
       </div>
       <div class="table">
-        <el-table
-          :data="tableData"
-          height="250"
-          border
-          style="width: 100%">
-          <el-table-column
-            prop="date"
-            label="日期"
-            width="180">
-          </el-table-column>
-          <el-table-column
-            prop="name"
-            label="姓名"
-            width="180">
-          </el-table-column>
-          <el-table-column
-            prop="address"
-            label="地址">
-          </el-table-column>
-        </el-table>
+        <div class="table-c">
+          <el-table
+            :data="tableData"
+            height="270"
+            border
+            style="width: 100%">
+            <el-table-column
+              prop="date"
+              label="日期"
+              width="180">
+            </el-table-column>
+            <el-table-column
+              prop="name"
+              label="姓名"
+              width="180">
+            </el-table-column>
+            <el-table-column
+              prop="address"
+              label="地址">
+            </el-table-column>
+          </el-table>
+        </div>
+
 
       </div>
 
