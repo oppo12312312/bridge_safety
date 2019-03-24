@@ -3,18 +3,18 @@
     @extend .db;
     @extend .height100;
     .content{
-        overflow: hidden ;
+        @extend .height100;
         @extend .fx1;
         @extend .db;
         @extend .v;
         .char{
-            @extend .fx1;
- 
+            // @extend .fx1;
+            height: calc(100% - 310px);
         }
         .table{
             height: 200px;
-            position:relative;
-
+            padding: 10px 0px;
+            position: relative;
         }
         .br-tab{
             margin-top: 2px;

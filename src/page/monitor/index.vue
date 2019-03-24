@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:58:28
- * @LastEditTime: 2019-03-24 10:37:02
+ * @LastEditTime: 2019-03-24 11:06:19
  -->
 <template>
   <div class="monitor"> 
@@ -39,15 +39,14 @@
           width="100%"
           height="100%"
           :data="chartData">
-        </CHistogram>
+        </CHistogram> 
       </div>
     
       <div class="table">
         <div class="table-c">
           <el-table
             :data="tableData"
-            height="200px" 
-            width = "100%" 
+            height="200" 
             border>
             <el-table-column
               prop="date"

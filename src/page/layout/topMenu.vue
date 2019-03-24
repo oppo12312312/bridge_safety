@@ -4,7 +4,7 @@ import { debug } from 'util';
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-23 20:59:44
+ * @LastEditTime: 2019-03-24 10:58:37
  -->
 
 
@@ -154,7 +154,6 @@ export default {
   },
   watch: {
     activeIndex(value) {
-      
       const index = value.split('_');
       const re = [];
       let menu = this.menuCfg;
@@ -174,7 +173,6 @@ export default {
   },
   methods: {
     openPage(value) {
-      
       this.activeIndex = value.index;
       this.$router.push({
         path: value.path

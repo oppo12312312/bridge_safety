@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:58:28
- * @LastEditTime: 2019-03-24 10:44:39
+ * @LastEditTime: 2019-03-24 11:00:36
  -->
 <template>
   <div class="system-map"> 
@@ -21,7 +21,7 @@
         <div class="table-c">
           <el-table
             :data="tableData"
-            height="270"
+            height="200" 
             border
             style="width: 100%">
             <el-table-column
