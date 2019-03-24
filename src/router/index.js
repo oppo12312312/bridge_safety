@@ -16,7 +16,7 @@ Vue.use(VueRouter);
  */
 let childRoutes = [];
 const requireModules = require.context('@/page', true, /\.router.js$/);
-debugger;
+
 requireModules.keys().forEach(fileName => {
   const file = requireModules(fileName);
   childRoutes = childRoutes.concat(file.default);

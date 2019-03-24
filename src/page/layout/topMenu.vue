@@ -154,7 +154,7 @@ export default {
   },
   watch: {
     activeIndex(value) {
-      debugger;
+      
       const index = value.split('_');
       const re = [];
       let menu = this.menuCfg;
@@ -174,7 +174,7 @@ export default {
   },
   methods: {
     openPage(value) {
-      debugger;
+      
       this.activeIndex = value.index;
       this.$router.push({
         path: value.path
