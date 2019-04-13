@@ -42,7 +42,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
     }
 
 }
-
+// 解决table在flex的div下面无法宽度自适应的问题，见实际例子
 .table-c{
     position:absolute; 
     width:100%;
