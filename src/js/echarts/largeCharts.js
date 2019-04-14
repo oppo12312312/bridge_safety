@@ -7,16 +7,16 @@
  */
 export default {
   legend: {
-    align: "left",
-    right: "15px",
+    align: 'left',
+    right: '15px',
     textStyle: {
-      color: "#fff"
+      color: '#fff'
     }
   },
   grid: {
-    top: "40px",
-    right: "30px",
-    bottom: "0px"
+    top: '40px',
+    right: '30px',
+    bottom: '0px'
   },
   xAxis: {
     // boundaryGap: false,
@@ -27,19 +27,19 @@ export default {
       show: true,
       // onZero: false,
       lineStyle: {
-        color: "#989799"
+        color: '#989799'
       }
     },
     axisLabel: {
-      color: "#989799",
+      color: '#989799',
       fontSize: 14,
       fontWeight: 100
     }
   },
   yAxis: {
-    position: "left",
+    position: 'left',
     nameTextStyle: {
-      color: "#E5E5E5",
+      color: '#E5E5E5',
       fontSize: 12,
       fontWeight: 100
     },
@@ -50,17 +50,17 @@ export default {
       show: true,
       onZero: false,
       lineStyle: {
-        color: "#989799"
+        color: '#989799'
       }
     },
     axisTick: {
       show: false
     },
     axisLabel: {
-      color: "#989799",
+      color: '#989799',
       fontSize: 16,
       fontWeight: 100
     }
   },
-  backgroundColor: "#1D223F"
+  backgroundColor: '#1D223F'
 };
