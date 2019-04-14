@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:31:30
- * @LastEditTime: 2019-04-14 12:14:09
+ * @LastEditTime: 2019-04-14 19:58:20
  -->
 <template>
   <div class="hello">
@@ -91,7 +91,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
-  margin: 40px 0 0;
+  margin:  40px 0 0;
 }
 ul {
   list-style-type: none;

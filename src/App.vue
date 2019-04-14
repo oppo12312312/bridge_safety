@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:31:30
- * @LastEditTime: 2019-03-11 18:09:32
+ * @LastEditTime: 2019-04-14 20:00:26
  -->
 <template>
   <div id="app">
@@ -14,6 +14,6 @@
 <script>
 
 export default {
-  name: 'App',
+  name:  'App',
 };
 </script>
