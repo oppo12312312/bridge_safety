@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 16:31:30
- * @LastEditTime: 2019-04-14 12:04:50
+ * @LastEditTime: 2019-04-14 12:14:09
  -->
 <template>
   <div class="hello">
@@ -71,7 +71,7 @@
       <li><a 
         href="https://github.com/vuejs/awesome-vue" 
         target="_blank" 
-        rel="noopener">awesome-vue</a></li>
+        rel="noopener">awesome-vue77</a></li>
     </ul>
   </div>
 </template>
