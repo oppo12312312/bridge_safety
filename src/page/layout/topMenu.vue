@@ -4,7 +4,7 @@ import { debug } from 'util';
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-11 18:44:31
- * @LastEditTime: 2019-03-24 10:58:37
+ * @LastEditTime: 2019-04-14 21:55:49
  -->
 
 
@@ -23,12 +23,12 @@ import { debug } from 'util';
       unique-opened  
       text-color="#fff"
       active-text-color="#ea644a">
-      <div 
+      <template 
         v-for="item in menuCfg" 
-        :key="item.index"
         :index="item.index">
         <el-submenu 
           v-if="item.haveChild"
+          :key="item.index"
           :index="item.index">
 
           <template 
@@ -39,11 +39,12 @@ import { debug } from 'util';
             <span>{{ item.name }}</span>
           </template>
 
-          <div 
+          <template 
             v-for="att in item.child" 
-            :key="att.index">
+          >
 
             <el-submenu 
+              :key="att.index"
               v-if="att.haveChild"
               :index="att.index" 
               class="chird" >
@@ -63,31 +64,36 @@ import { debug } from 'util';
                 <i 
                   class="iconfont" 
                   :class="attr.icon"></i>
-              <span>{{ attr.name }}</span></el-menu-item>
+              <span >{{ attr.name }}</span></el-menu-item>
             </el-submenu>
 
 
             <el-menu-item 
               v-else
               class="chird"
+              :key="att.index"
               :index="att.index" 
               @click="openPage(att)">   
               <i 
                 class="iconfont" 
                 :class="att.icon"></i>
-            <span>{{ att.name }}</span></el-menu-item>
-          </div>
+            <span slot="title">{{ att.name }}</span></el-menu-item>
+          </template>
 
         </el-submenu>
         <el-menu-item 
           v-else
           :index="item.index" 
+          :key="item.index"
+          class="stair-menu"
           @click="openPage(item)">   
           <i 
             class="iconfont" 
             :class="item.icon"></i>
-        <span>{{ item.name }}</span></el-menu-item>
-      </div>
+          <span slot="title">{{ item.name }}</span>
+        </el-menu-item>
+      </template>
+
 
     </el-menu>
   </div>
@@ -219,7 +225,20 @@ export default {
     }
     // width: 200px;
     background-color: #33485c;
-    .el-submenu__title{
+    .el-menu-item{
+        &:hover{
+            background-color: rgba(30,30,30,.3) ;
+        }
+        &:hover{
+            span, i{
+                color:$c-hover-red !important;
+            }
+            span{
+                font-weight: 500!important;
+            }
+        }
+    }
+    .el-submenu__title,.stair-menu{
         height: 50px;
         padding: 0 10px;
         line-height: 51px;
@@ -239,20 +258,7 @@ export default {
             display: block !important;
         }
     }
-    .el-menu-item{
-        background-color: rgba(30,30,30,.3) !important;
-        &:hover{
-            background-color: rgba(30,30,30,.3) !important;
-        }
-        &:hover{
-            span, i{
-                color:$c-hover-red !important;
-            }
-            span{
-                font-weight: 500!important;
-            }
-        }
-    }
+
     .br-switch{
         text-align: center;
         padding: 5px;
