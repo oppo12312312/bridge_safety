@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-15 11:36:47
- * @LastEditTime: 2019-04-14 11:50:31
+ * @LastEditTime: 2019-04-14 19:54:15
  */
 const express = require('express'); //express框架
 const http = require('http'); 
@@ -18,7 +18,7 @@ app.use(express.static('./dist'));
 // });
 
 const httpServer = http.createServer(app);
-httpServer.listen(6000, '0.0.0.0', () => {
+httpServer.listen(8080, '0.0.0.0', () => {
   console.log('success');
 });
 
