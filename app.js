@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-03-15 11:36:47
- * @LastEditTime: 2019-04-14 19:55:16
+ * @LastEditTime: 2019-05-08 21:35:29
  */
 const express = require('express'); //express框架
 const http = require('http'); 
@@ -11,7 +11,7 @@ const history = require('connect-history-api-fallback');
 
 const app = express();
 app.use(history());
-app.use(express.static('./dist'));
+app.use(express.static('./ql'));
 
 // app.get('/api', (req, res) => {
 //   res.send('hello world');

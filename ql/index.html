@@ -1,0 +1,128 @@
+<!--
+ * @Description: 
+ * @Author: zhongshuai
+ * @LastEditors: zhongshuai
+ * @Date: 2019-04-30 20:39:23
+ * @LastEditTime: 2019-05-08 20:07:24
+ -->
+<!DOCTYPE html> 
+<html> 
+    <head>
+        <meta charset="UTF-8">
+     </head>
+    <link rel="stylesheet"  href="http://39.97.111.250/css/bootstrap.css"></link>
+    <link rel="stylesheet"  href="http://39.97.111.250/iconfont/iconfont.css"></link>
+    <link rel="stylesheet"  href="http://39.97.111.250/css/case.css"></link>
+    <link rel="stylesheet"  href="http://39.97.111.250/css/metroStyle.css"></link>
+
+    <link rel="stylesheet"  href="./css/ql.css"></link>
+
+    
+    <script src="http://39.97.111.250/js/jquery.min.js"></script>
+    <script src="http://39.97.111.250/js/bootstrap.js"></script>
+    <script src="http://39.97.111.250/js/jquery.ztree.all.min.js"></script>
+    <script src="http://39.97.111.250/js/jquery.ztree.exedit.min.js"></script>
+    <script src="http://39.97.111.250/js/jquery.ztree.exhide.min.js"></script>
+
+    <script src="http://39.97.111.250/js/jquery.nicescroll.min.js"></script>
+    <script src="http://39.97.111.250/js/fuzzysearch.js"></script>
+
+
+    <link rel="stylesheet" href="./js/draw/leaflet.css" />
+    <script src="./js/draw/leaflet.js"></script>
+
+
+    <link rel="stylesheet" href="./js/draw/leaflet.draw-src.css" />
+    <script src="./js/draw/leaflet.draw-src.js"></script>
+    <script src="./js/draw/mapCfg.js"></script>
+
+
+    
+    <script src="./js/ql.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/ajax.js"></script>
+
+
+
+  
+<body> 
+    <div class="h-100" id="ql">
+        <div class="row h-100">
+                <div class="col-md-2 left h-100">
+                        <div class="input-control search-box search-box-circle has-icon-left has-icon-right" id="key1">
+                            <input id="key" type="search" class="form-control search-input" placeholder="搜索" autocomplete="off" style="height:32px;">
+                            <label for="key" class="input-control-icon-left search-icon"><i class="iconfont icon-sousuo"></i></label>
+                            <a href="#" class="input-control-icon-right search-clear-btn"><i class="icon icon-remove"></i></a>
+                        </div>
+                        <div class="ztreeZtreeBackground left">
+                            <ul id="tree" class="ztree" ></ul>
+                        </div>
+                </div>
+                <div class="col-md-10 right h-100" id="leaflet-map">
+                        <a id="fullScreen2" href="javascript:void(0)" data-placement="bottom" title="" data-toggle="tooltip" data-original-title="全屏切换">
+                                <i class="iconfont icon-fangda"></i>
+                        </a>
+                        <div class="map-time">20111-11,11,111</div>
+                        <div id="marker-popup" ></div>
+                </div>               
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="add-cross-section" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:765px;">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">请选择截面</h4>
+                </div>
+                <div class="modal-body" >
+                    <div class="xy row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon" >X坐标</span>
+                                <input   id="basic-addon-x" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                    <span class="input-group-addon" >Y坐标</span>
+                                    <input   id="basic-addon-y" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        
+                      
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="add-cross-section-sb">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" id="add-cross-section-enter"  class="btn btn-primary">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <div class="modal fade " id="delete-cross-section" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog"  style="width:400px;" >
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">提示信息</h4>
+                </div>
+                <div class="modal-body">是否确认删除？</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" id="delete-cross-section-enter"  class="btn btn-primary">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</body> 
+</html>

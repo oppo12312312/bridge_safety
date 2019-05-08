@@ -12,7 +12,7 @@ git pull
 cnpm install
 
 # 构建
-npm run build
+# npm run build
 
 # 关闭所有的node进程
 pgrep node | xargs kill -s 9
