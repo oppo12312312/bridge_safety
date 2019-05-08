@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-09 00:02:31
+ * @LastEditTime: 2019-05-09 00:07:25
  */
 var map = null;
 var imageOverlay = null;
@@ -359,9 +359,8 @@ function getDeviceIds(){
     var ids = [];
     var cross = document.getElementsByClassName("radio-i");
     for(var i = 0; i < cross.length; i ++){
-        item = cross[i];
-        if(item.checked){
-            ids.push(item.value)
+        if(cross[i].checked){
+            ids.push(cross[i].value)
         }
     }
     return ids;
@@ -381,10 +380,10 @@ function setValue(value){
     setTimeout(function(){
         var cross = document.getElementsByClassName("radio-i");
         debugger
+
         for(var i = 0; i < cross.length; i ++){
-            item = cross[i];
-            if(item.value === value+""){
-                item.checked = true
+            if( cross[i].value === value+""){
+                cross[i].checked = true
             }
         }
     }, 500)
