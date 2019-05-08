@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-08 23:19:00
+ * @LastEditTime: 2019-05-08 23:22:57
  */
 var map = null;
 var imageOverlay = null;
@@ -259,6 +259,7 @@ function mouseoutLayer(){
     console.log("移出")
     
     console.log($("#marker-popup:hover").length)
+    debugger
     if(!$("#marker-popup:hover").length ){
         closePopup();
     }
