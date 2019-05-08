@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-08 23:51:23
+ * @LastEditTime: 2019-05-09 00:02:31
  */
 var map = null;
 var imageOverlay = null;
@@ -357,7 +357,7 @@ function deleteCross(){
 //获取选择的设备id
 function getDeviceIds(){
     var ids = [];
-    var cross = $("#add-cross-section .radio-i");
+    var cross = document.getElementsByClassName("radio-i");
     for(var i = 0; i < cross.length; i ++){
         item = cross[i];
         if(item.checked){
@@ -379,12 +379,12 @@ function getJmById(id){
 
 function setValue(value){
     setTimeout(function(){
-        var cross = $("#add-cross-section .radio-i");
+        var cross = document.getElementsByClassName("radio-i");
         debugger
         for(var i = 0; i < cross.length; i ++){
             item = cross[i];
             if(item.value === value+""){
-                $(item).attr('checked',true)
+                item.checked = true
             }
         }
     }, 500)
