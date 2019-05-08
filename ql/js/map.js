@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-08 20:59:55
+ * @LastEditTime: 2019-05-08 23:19:00
  */
 var map = null;
 var imageOverlay = null;
@@ -188,6 +188,7 @@ function mouseoverLayer(event){
 }
 $(function(){
     $("#marker-popup").mouseout(function(){
+        debugger
         if(!$("#marker-popup:hover").length ){
             closePopup()
         }
