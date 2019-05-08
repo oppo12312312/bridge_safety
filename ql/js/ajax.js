@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-05-01 15:56:59
- * @LastEditTime: 2019-05-04 22:26:45
+ * @LastEditTime: 2019-05-09 00:25:06
  */
 
 //通过平面图获取所有的截面
@@ -13,7 +13,8 @@ function getJcCrosssectionByProId(id, callBack){
         type : "get",
         dataType : "json",
         data:{
-            id: id
+            id: id,
+            random:Math.random()
         },
         success : callBack
     })
@@ -26,7 +27,9 @@ function getCroTermPar(crossSectionId, callBack){
         type : "get",
         dataType : "json",
         data:{
-            crossSectionId: crossSectionId
+            crossSectionId: crossSectionId,
+            random:Math.random()
+
         },
         success : callBack
     })
@@ -40,7 +43,9 @@ function getAllDevice(callBack){
         dataType : "json",
         data:{
             offset: 1,
-            limit: 1000
+            limit: 1000,
+            random:Math.random()
+
         },
         success : callBack
     })
@@ -65,7 +70,9 @@ function deleteCrosssection(id,callBack){
         type : "post",
         dataType : "json",
         data:{
-            id:id
+            id:id,
+            random:Math.random()
+
         },
         success : callBack
     })
