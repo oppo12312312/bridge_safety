@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-08 23:22:57
+ * @LastEditTime: 2019-05-08 23:43:42
  */
 var map = null;
 var imageOverlay = null;
@@ -68,6 +68,13 @@ function initMap(url){
     map.addLayer(editableLayers);
     map.on("zoom",function(){
         closePopup()
+        closeMenu()
+    })
+    map.on("click", function(){
+        closeMenu()
+    })
+    map.on("move", function(){
+        closeMenu()
     })
     L.drawLocal = mapCfg;
     startDraw();
@@ -223,6 +230,18 @@ function showPopup(event){
     $("#marker-popup").css("display","block");
 }
 
+function showMenu(event){
+    $("#marker-menu").css("top",event.containerPoint.y);
+    $("#marker-menu").css("left",event.containerPoint.x +5);
+    $("#marker-menu").css("display","block");
+}
+
+function closeMenu(){
+    $("#marker-menu").css("display","none");
+}
+
+
+
 /**************************************时间格式化处理************************************/
 function dateFtt(fmt,date)   
 { //author: meizz   
@@ -269,16 +288,17 @@ function mouseoutLayer(){
 //右键点击截面
 function contextmenuLayer(event){
     clickPoint = event.layer;
-    $("#marker-popup").html("<div class='context-menu'><div id='delete-cross'>删除</div><div id='edit-cross'>编辑</div></div>")
-    showPopup(event);
+    $("#marker-menu").html("<div class='context-menu'><div id='delete-cross'>删除</div><div id='edit-cross'>编辑</div></div>")
+    showMenu(event);
     $("#delete-cross").on("click", function(){
-        closePopup();
+        closeMenu()
         $("#delete-cross-section").modal('show');
     })
 
     $("#edit-cross").on("click", function(){
         dialogType = 'edit';
         $("#add-cross-section").modal('show');
+        closeMenu()
         initDialogContent();
         setValue(clickPoint.options.crossSectionId);
         $("#basic-addon-y").val(clickPoint._latlng.lat.toFixed(2))

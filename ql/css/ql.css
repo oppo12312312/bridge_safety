@@ -70,6 +70,16 @@ body, html {
     cursor: auto;
 }
 
+#marker-menu{
+    background: #ffffff;
+    width: 170px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 10000000000;
+    display: none;
+    cursor: auto;
+}
+
 .popup .p-name{
     width: 100px;
     margin-bottom: 5px;
