@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-08 23:43:42
+ * @LastEditTime: 2019-05-08 23:51:23
  */
 var map = null;
 var imageOverlay = null;
@@ -314,7 +314,7 @@ function initDialogContent(){
         allJm = data;
         data.forEach(function(item){
             var one =   "<label class='radio-inline'>" +
-            "<input type='radio' name='optionsRadiosinline'  value='{{termId}}'> {{termName}} </label>"
+            "<input type='radio' class='radio-i' name='optionsRadiosinline'  value='{{termId}}'> {{termName}} </label>"
             one = one.replace("{{termName}}",item.crossSectionName );
             one = one.replace("{{termId}}",item.crossSectionId );
             html.push(one);
@@ -357,7 +357,7 @@ function deleteCross(){
 //获取选择的设备id
 function getDeviceIds(){
     var ids = [];
-    var cross = $("#add-cross-section :radio");
+    var cross = $("#add-cross-section .radio-i");
     for(var i = 0; i < cross.length; i ++){
         item = cross[i];
         if(item.checked){
@@ -379,7 +379,7 @@ function getJmById(id){
 
 function setValue(value){
     setTimeout(function(){
-        var cross = $("#add-cross-section :radio");
+        var cross = $("#add-cross-section .radio-i");
         debugger
         for(var i = 0; i < cross.length; i ++){
             item = cross[i];
