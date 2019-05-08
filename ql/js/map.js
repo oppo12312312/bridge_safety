@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-09 00:07:25
+ * @LastEditTime: 2019-05-09 00:15:55
  */
 var map = null;
 var imageOverlay = null;
@@ -195,7 +195,6 @@ function mouseoverLayer(event){
 }
 $(function(){
     $("#marker-popup").mouseout(function(){
-        debugger
         if(!$("#marker-popup:hover").length ){
             closePopup()
         }
@@ -278,7 +277,6 @@ function mouseoutLayer(){
     console.log("移出")
     
     console.log($("#marker-popup:hover").length)
-    debugger
     if(!$("#marker-popup:hover").length ){
         closePopup();
     }
@@ -379,7 +377,6 @@ function getJmById(id){
 function setValue(value){
     setTimeout(function(){
         var cross = document.getElementsByClassName("radio-i");
-        debugger
 
         for(var i = 0; i < cross.length; i ++){
             if( cross[i].value === value+""){
