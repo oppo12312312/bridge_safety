@@ -43,6 +43,10 @@
     display: none !important;
 }
 
+#add-cross-radio-no-text{
+    margin-top: 10px;
+}
+
 
 .h-100{
     height: 100%;
