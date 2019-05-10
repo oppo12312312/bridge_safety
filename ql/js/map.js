@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-10 18:13:13
+ * @LastEditTime: 2019-05-10 21:34:29
  */
 var map = null;
 var imageOverlay = null;
@@ -52,8 +52,8 @@ function initMap(url){
         crs: L.CRS.Simple,
         maxZoom: 7,
         minZoom: 0,
-        zoomDelta: 0.1,
-        zoomSnap: 0.1,
+        zoomDelta: 0.5,
+        zoomSnap: 0.5,
         center: [450, 200],
         zoom: defaultZoom
     });
