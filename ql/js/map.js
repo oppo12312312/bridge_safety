@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-10 21:34:29
+ * @LastEditTime: 2019-05-10 21:48:28
  */
 var map = null;
 var imageOverlay = null;
-var defaultZoom = 2;
+var defaultZoom = 1;
 
 var allJm = [];
 
@@ -47,13 +47,14 @@ function initMap(url){
     var bounds = [[
         [0, 0],
         [$("#leaflet-map").height()/2, $("#leaflet-map").width()/2]
+        // [300,900]
       ]]
     map = L.map('leaflet-map', {
         crs: L.CRS.Simple,
         maxZoom: 7,
         minZoom: 0,
-        zoomDelta: 0.5,
-        zoomSnap: 0.5,
+        zoomDelta: 0.1,
+        zoomSnap: 0.1,
         center: [450, 200],
         zoom: defaultZoom
     });
@@ -86,8 +87,9 @@ function setMapUrl(url){
     img.src = url;
     img.onload = function() {
 
-        map.setZoom(defaultZoom* (img.height/img.width));
+        // map.setZoom(defaultZoom* (img.height/img.width));
         // alert((img.height/img.width));
+        map.setZoom(defaultZoom);
     }
     // map.setZoom(defaultZoom)
     imageOverlay.setUrl(url)
