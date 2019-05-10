@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-10 21:48:28
+ * @LastEditTime: 2019-05-10 22:25:25
  */
 var map = null;
 var imageOverlay = null;
-var defaultZoom = 1;
+var defaultZoom = 1.1;
 
 var allJm = [];
 
