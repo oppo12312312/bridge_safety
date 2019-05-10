@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-09 00:15:55
+ * @LastEditTime: 2019-05-10 18:13:13
  */
 var map = null;
 var imageOverlay = null;
-var defaultZoom = 0.5;
+var defaultZoom = 2;
 
 var allJm = [];
 
@@ -46,15 +46,15 @@ function initMap(url){
     h = 800*num;
     var bounds = [[
         [0, 0],
-        [400, 900]
+        [$("#leaflet-map").height()/2, $("#leaflet-map").width()/2]
       ]]
     map = L.map('leaflet-map', {
         crs: L.CRS.Simple,
         maxZoom: 7,
         minZoom: 0,
-        zoomDelta: 0.5,
-        zoomSnap: 0.5,
-        center: [900, 300],
+        zoomDelta: 0.1,
+        zoomSnap: 0.1,
+        center: [450, 200],
         zoom: defaultZoom
     });
 
@@ -82,13 +82,14 @@ function initMap(url){
 }
 
 function setMapUrl(url){
-    // var img = new Image();
-    // img.src = url;
-    // img.onload = function() {
-    //     map.setZoom(defaultZoom* (1000/img.width*0.5));
-    //     alert('width:'+img.width+',height:'+img.height);
-    // }
-    map.setZoom(defaultZoom)
+    var img = new Image();
+    img.src = url;
+    img.onload = function() {
+
+        map.setZoom(defaultZoom* (img.height/img.width));
+        // alert((img.height/img.width));
+    }
+    // map.setZoom(defaultZoom)
     imageOverlay.setUrl(url)
     
 }
@@ -214,11 +215,13 @@ $(function(){
     })
 
     $('#add-cross-section').on('hidden.bs.modal', function () {
-        initMarker()
+        // initMarker()
+        editableLayers.removeLayer(addPoint);
     })
 
     $('#delete-cross-section').on('hidden.bs.modal', function () {
-        initMarker()
+        // initMarker()
+        
     })
     initTime()
 })
@@ -308,16 +311,25 @@ function contextmenuLayer(event){
 //设备选择对话框
 function initDialogContent(){
     getJcCrosssectionByProId(checkedJcId,function(data){
-        var html = [];
+        var htmlHave = [];
+        var htmlNo = [];
         allJm = data;
+        
         data.forEach(function(item){
             var one =   "<label class='radio-inline'>" +
             "<input type='radio' class='radio-i' name='optionsRadiosinline'  value='{{termId}}'> {{termName}} </label>"
             one = one.replace("{{termName}}",item.crossSectionName );
             one = one.replace("{{termId}}",item.crossSectionId );
-            html.push(one);
+            if(item.crossSectionProjectX){
+                htmlHave.push(one);
+            }else{
+                htmlNo.push(one);
+            }
+           
         })
-        $("#add-cross-section-sb").html(html.join(''))
+        $("#add-cross-radio-have").html(htmlHave.join(''))
+        $("#add-cross-radio-no").html(htmlNo.join(''))
+
     })
 }
 
@@ -332,7 +344,9 @@ function addCross(){
     var latlng = addPoint._latlng;90
     item.crossSectionProjectY = $("#basic-addon-y").val();
     item.crossSectionProjectX = $("#basic-addon-x").val();
-    updateCrosssection(item, function(){})
+    updateCrosssection(item, function(){
+        initMarker()
+    })
 }
 
 //修改截面设备
@@ -342,14 +356,18 @@ function editCross(){
     var latlng = clickPoint._latlng;
     item.crossSectionProjectY = $("#basic-addon-y").val();
     item.crossSectionProjectX = $("#basic-addon-x").val();
-    updateCrosssection(item, function(){})
+    updateCrosssection(item, function(){
+        initMarker()
+    })
 }
 
 //删除截面
 function deleteCross(){
     clickPoint.options.crossSectionProjectY = "";
     clickPoint.options.crossSectionProjectX = "";
-    updateCrosssection(clickPoint.options, function(){})
+    updateCrosssection(clickPoint.options, function(){
+        initMarker()
+    })
 }
 
 //获取选择的设备id

@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 20:39:23
- * @LastEditTime: 2019-05-09 00:32:32
+ * @LastEditTime: 2019-05-10 17:53:14
  -->
  <!DOCTYPE html> 
  <html> 
@@ -58,7 +58,7 @@
                              <ul id="tree" class="ztree" ></ul>
                          </div>
                  </div>
-                 <div class="col-md-10 right h-100 padding-0" >
+                 <div id="map-content" class="col-md-10 right h-100 padding-0" >
                         <div id="leaflet-map" class="w-100  h-100">
                                 <a id="fullScreen2" href="javascript:void(0)" data-placement="bottom" title="" data-toggle="tooltip" data-original-title="全屏切换">
                                         <i class="iconfont icon-fangda"></i>
@@ -67,49 +67,54 @@
                                 <div id="marker-popup" ></div>
                                 <div id="marker-menu" ></div>
                         </div>
+                        <div class="modal fade" id="add-cross-section" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" style="width:765px;">
+                                <div class="modal-content" >
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">请选择截面</h4>
+                                    </div>
+                                    <div class="modal-body" >
+                                        <div class="xy row">
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon" >X坐标</span>
+                                                    <input   id="basic-addon-x" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                        <span class="input-group-addon" >Y坐标</span>
+                                                        <input   id="basic-addon-y" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                            
+                                          
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12" id="add-cross-section-sb">
+                                                <div>已标注</div>
+                                                <div id="add-cross-radio-have"></div>
+                                                <div>未标注</div>
+                                                <div id="add-cross-radio-no"></div>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button type="button" id="add-cross-section-enter"  class="btn btn-primary">确认</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
                
                  </div>               
          </div>
      </div>
  
  
-     <div class="modal fade" id="add-cross-section" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div class="modal-dialog" style="width:765px;">
-             <div class="modal-content" >
-                 <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                     <h4 class="modal-title" id="myModalLabel">请选择截面</h4>
-                 </div>
-                 <div class="modal-body" >
-                     <div class="xy row">
-                         <div class="col-md-6">
-                             <div class="input-group">
-                                 <span class="input-group-addon" >X坐标</span>
-                                 <input   id="basic-addon-x" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
-                             </div>
-                         </div>
-                         <div class="col-md-6">
-                             <div class="input-group">
-                                     <span class="input-group-addon" >Y坐标</span>
-                                     <input   id="basic-addon-y" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
-                             </div>
-                         </div>
-                         
-                       
-                     </div>
-                     <div class="row">
-                         <div class="col-md-12" id="add-cross-section-sb">
- 
-                         </div>
-                     </div>
-                 </div>
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                     <button type="button" id="add-cross-section-enter"  class="btn btn-primary">确认</button>
-                 </div>
-             </div><!-- /.modal-content -->
-         </div><!-- /.modal -->
-     </div>
+
  
  
      <div class="modal fade " id="delete-cross-section" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
