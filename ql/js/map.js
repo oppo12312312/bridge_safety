@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-10 22:25:25
+ * @LastEditTime: 2019-05-13 20:20:30
  */
 var map = null;
 var imageOverlay = null;
-var defaultZoom = 1.1;
+var defaultZoom = 0.5;
 
 var allJm = [];
 
@@ -40,14 +40,14 @@ var dialogType = null;
 
 
 
-function initMap(url){
+function initMap(url, zoom){
     var num = 20;
-    var w = 1066*num,
-    h = 800*num;
+    var h = 540,
+    w = 900;
     var bounds = [[
         [0, 0],
-        [$("#leaflet-map").height()/2, $("#leaflet-map").width()/2]
-        // [300,900]
+        // [$("#leaflet-map").height()/2, $("#leaflet-map").width()/2]
+        [h,w]
       ]]
     map = L.map('leaflet-map', {
         crs: L.CRS.Simple,
@@ -55,7 +55,7 @@ function initMap(url){
         minZoom: 0,
         zoomDelta: 0.1,
         zoomSnap: 0.1,
-        center: [450, 200],
+        center: [h/2, w/2],
         zoom: defaultZoom
     });
 
@@ -82,17 +82,17 @@ function initMap(url){
     setMapUrl(url)
 }
 
-function setMapUrl(url){
-    var img = new Image();
-    img.src = url;
-    img.onload = function() {
-
-        // map.setZoom(defaultZoom* (img.height/img.width));
-        // alert((img.height/img.width));
-        map.setZoom(defaultZoom);
+function setMapUrl(url,zoom){
+    if(zoom){
+        map.setZoom(zoom);
+    }else{
+        var img = new Image();
+        img.src = url;
+        img.onload = function() {   
+            map.setZoom(defaultZoom* (img.height/img.width));
+        }
     }
-    // map.setZoom(defaultZoom)
-    imageOverlay.setUrl(url)
+    imageOverlay.setUrl(url);
     
 }
 

@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:07:36
- * @LastEditTime: 2019-05-10 22:15:33
+ * @LastEditTime: 2019-05-13 20:18:56
  */
 
 var commonUrl = "http://39.97.111.250";
@@ -127,7 +127,7 @@ function zTreeOnClick (event, treeId, treeNode) {
 	var svgPath = getSvgUrl(svgId);
 	console.log(svgPath);
 	if(!treeNode.children){
-		setMapUrl(svgPath)
+		setMapUrl(svgPath , treeNode.zoom)
 		initMarker(svgId)
 	}
 
