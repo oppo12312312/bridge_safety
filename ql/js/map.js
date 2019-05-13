@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-13 20:31:48
+ * @LastEditTime: 2019-05-13 21:07:26
  */
 var map = null;
 var imageOverlay = null;
@@ -44,29 +44,33 @@ function initMap(url, zoom){
     var num = 20;
     var h = 540,
     w = 900;
+    //地图的范围，不能修改，修改后之前的标注坐标全部作废
     var bounds = [[
         [0, 0],
-        // [$("#leaflet-map").height()/2, $("#leaflet-map").width()/2]
         [h,w]
       ]]
-    map = L.map('leaflet-map', {
+    map = L.map('leaflet-map', {   //div容器id
         crs: L.CRS.Simple,
-        maxZoom: 7,
-        minZoom: 0,
-        zoomDelta: 0.1,
-        zoomSnap: 0.1,
-        center: [h/2, w/2],
-        zoom: defaultZoom
+        maxZoom: 7,  //最大级别
+        minZoom: 0,  //最小级别
+        zoomDelta: 0.1,  //点击放大按钮每次缩放的级别
+        zoomSnap: 0.1,   //鼠标滚轮每次的缩放级别
+        center: [h/2, w/2],  //地图的中心点，不能修改
+        zoom: defaultZoom    //默认缩放级别
     });
 
     // var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
     // var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
     // var bounds = new L.LatLngBounds(southWest, northEast);
     console.log(bounds)
+    //创建项目图层
     imageOverlay =  L.imageOverlay(url, bounds);
+    //创建项目图层
     imageOverlay.addTo(map);
+    //设置项目图层的最大范围
     map.setMaxBounds(bounds);
     map.addLayer(editableLayers);
+    //地图缩放的时候清楚menu和popup
     map.on("zoom",function(){
         closePopup()
         closeMenu()
@@ -78,20 +82,23 @@ function initMap(url, zoom){
         closeMenu()
     })
     L.drawLocal = mapCfg;
+    //开启标注
     startDraw();
+    //设置地图的项目url
     setMapUrl(url)
 }
 
 function setMapUrl(url,zoom){
+    //如果后台配置了zoom则使用后台的zoom
     if(zoom){
         map.setZoom(zoom);
     }else{
-        var img = new Image();
-        img.src = url;
-        img.onload = function() {   
+        // var img = new Image();
+        // img.src = url;
+        // img.onload = function() {   
             // map.setZoom(defaultZoom* (img.height/img.width));
             map.setZoom(defaultZoom)
-        }
+        // }
 
     }
     imageOverlay.setUrl(url);
@@ -103,6 +110,7 @@ function  startDraw() {
       featureGroup: editableLayers
     });
     icon.iconUrl = icon.baseUrl;
+    //设置标准的时候的鼠标的图标
     var MyCustomMarker = L.Icon.extend({
       options: icon
     });
@@ -127,6 +135,7 @@ function  startDraw() {
     //   icon: new MyCustomMarker()
     // });
 
+    //开启标注
     var drawControl = new L.Control.Draw(options);
     map.addControl(drawControl);
     let scope = this;
@@ -134,6 +143,7 @@ function  startDraw() {
      * 地图添加标注成功事件
      */
    
+    //每次标准成功触发的事件
     map.on(L.Draw.Event.CREATED, function(e) {
         addPoint = e.layer;
         // addPoint.bindPopup(addPoint._latlng.lat + "  "+ addPoint._latlng.lng);
@@ -151,7 +161,7 @@ function  startDraw() {
   }
 
 
-//通过桥梁id 绘制所有界面
+//通过项目id 绘制所有界面
 function  initMarker(id){
     if(id){
         checkedJcId = id;
@@ -160,6 +170,7 @@ function  initMarker(id){
     getJcCrosssectionByProId(checkedJcId, function(data){
         data.forEach(function(item){
             icon.iconUrl = icon.baseUrl.replace('1',item.croAlarmLevel)
+            //截面的图标配置
             item.icon = L.icon(icon);
             if(item.crossSectionProjectY && item.crossSectionProjectX){
                 var marker = L.marker([item.crossSectionProjectY, item.crossSectionProjectX],item);
