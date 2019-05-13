@@ -3,11 +3,11 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:57:47
- * @LastEditTime: 2019-05-13 20:20:30
+ * @LastEditTime: 2019-05-13 20:31:48
  */
 var map = null;
 var imageOverlay = null;
-var defaultZoom = 0.5;
+var defaultZoom = 0.3;
 
 var allJm = [];
 
@@ -89,8 +89,10 @@ function setMapUrl(url,zoom){
         var img = new Image();
         img.src = url;
         img.onload = function() {   
-            map.setZoom(defaultZoom* (img.height/img.width));
+            // map.setZoom(defaultZoom* (img.height/img.width));
+            map.setZoom(defaultZoom)
         }
+
     }
     imageOverlay.setUrl(url);
     
