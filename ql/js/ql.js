@@ -3,7 +3,7 @@
  * @Author: zhongshuai
  * @LastEditors: zhongshuai
  * @Date: 2019-04-30 21:07:36
- * @LastEditTime: 2019-05-13 20:18:56
+ * @LastEditTime: 2019-05-14 21:06:48
  */
 
 var commonUrl = "http://39.97.111.250";
@@ -261,8 +261,12 @@ function initFullScreen(){
                 ||document.webkitFullscreenElement 
                 ||false;
         if(!isFullscreen){
-				var el = document.getElementById('map-content');
-
+					if(document.getElementById('mainFrame')){
+						var el = document.getElementById('mainFrame').contentWindow.document.getElementById('map-content');
+					}else{
+						var el = document.getElementById('map-content');
+					}
+				
                 if (el.requestFullscreen) { 
                         el.requestFullscreen(); 
                 } else if (el.mozRequestFullScreen) { 
